@@ -1,13 +1,5 @@
-/**
- * @file md5.cpp
- */
-
 #include "md5.h"
-/**
-* @brief Получение хэш-кода по алгоритму md5
-* @param msg сообщения для хэширования
-* @return хэш-код
-*/
+
 std::string MD5_hash(std::string msg)
 {
     using namespace CryptoPP;

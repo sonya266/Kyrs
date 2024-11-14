@@ -1,27 +1,16 @@
-/**
-* @file DataReader.cpp
-*/
 #include "DataReader.h"
 
-/**
-* @brief Геттер для атрибута FileReader
-*/
+
 string DataReader::get_FileReader(){
     return FileReader;
 }
 
-/**
-* @brief Сеттер для атрибута FileReader
-*/
+
 void DataReader::set_FileReader(string file){
     FileReader = file;
 }
 
-/**
-* @brief Функция для получения БД клиентов
-* @return Возращает два вектора: логины и пароли клиентов
-* @throw Errors при возникновении ошибки
-*/
+
 pair<vector<string>, vector<string>> DataReader::getClient(){
     vector<string> firstVector;
     vector<string> secondVector;
