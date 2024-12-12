@@ -1,0 +1,56 @@
+\hypertarget{ServerClientInterface_8h_source}{}\doxysection{Server\+Client\+Interface.\+h}
+\mbox{\hyperlink{ServerClientInterface_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <sys/socket.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <netinet/in.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <arpa/inet.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <locale>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <codecvt>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{DataReader_8h}{DataReader.h}}"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{User_8h}{User.h}}"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classServerClientInterface}{ServerClientInterface}}\{}
+\DoxyCodeLine{40     \textcolor{keyword}{public}:}
+\DoxyCodeLine{41         \textcolor{keywordtype}{int} interaction(\textcolor{keywordtype}{string} database, \textcolor{keywordtype}{string} logFile);}
+\DoxyCodeLine{42         uint64\_t \mbox{\hyperlink{classServerClientInterface_ac268bd963da15bcd06305e372007bec3}{sum\_vec}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{keywordtype}{string} \mbox{\hyperlink{classServerClientInterface_a14672c6eafb84c36a6585a5d2eada471}{get\_address}}();}
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerClientInterface_a71940a49234dc3ff464fd438e21639c4}{set\_address}}(\textcolor{keywordtype}{string} address1);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{keywordtype}{int} \mbox{\hyperlink{classServerClientInterface_af80ca9548e3c33b6907593d944d8a54c}{get\_port}}();}
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerClientInterface_abb4d81b39c895de505cf50e7e9212ca8}{set\_port}}(\textcolor{keywordtype}{int} port1);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         vector<uint64\_t> \mbox{\hyperlink{classServerClientInterface_af2de16dc0c5558d4ba7a880ac5065eb9}{get\_vec}}();}
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerClientInterface_a6a1c318057e5c34a32e2c303ffa8f671}{set\_vec}}(vector<uint64\_t> v);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{string} \mbox{\hyperlink{classServerClientInterface_a07f2546694ccc15b8511fe4d25aa7051}{get\_salt}}();}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerClientInterface_a477cb3b05c6fb872460bfdc7afc0b684}{set\_salt}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         pair<vector<string>, vector<string>> \mbox{\hyperlink{classServerClientInterface_adfa341b8dd551e93b4274e59392e9142}{get\_DB\_clients}}();}
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerClientInterface_abaaeea746b4f636242228e3a5f8e7cf9}{set\_DB\_clients}}(vector<string> login, vector<string> password);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keyword}{private}:}
+\DoxyCodeLine{60         \textcolor{keywordtype}{string} address;}
+\DoxyCodeLine{61         \textcolor{keywordtype}{int} port;}
+\DoxyCodeLine{62         vector<uint64\_t> vec;}
+\DoxyCodeLine{63         \textcolor{keywordtype}{string} salt;}
+\DoxyCodeLine{64         pair<vector<string>, vector<string>>DB\_clients;}
+\DoxyCodeLine{65         \mbox{\hyperlink{classErrors}{Errors}} Err;}
+\DoxyCodeLine{66 \};}
+
+\end{DoxyCode}

@@ -1,3 +1,11 @@
+/** 
+* @file User.h
+* @author Дьякова С.М.
+* @version 1.0
+* @date 09.12.2023
+* @copyright ИБСТ ПГУ
+* @brief Заголовочный файл для модуля User
+*/
 #include <string>
 #include  <vector>
 #include <iostream>
@@ -6,7 +14,11 @@
 
 using namespace std;
 
-
+/** 
+* @brief Класс, представляющий информацию о подлюченном пользователе
+* @param ID ID подлюченного клиента
+* @param hash хэш-код подлюченного клиента
+*/
 class User{
     private:
         string ID;

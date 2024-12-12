@@ -1,6 +1,11 @@
+/**
+* @file ServerClientInterface.cpp
+*/
 #include "ServerClientInterface.h"
 
-
+/**
+* @brief Геттер для атрибута address
+*/
 string ServerClientInterface::get_address(){
     return address;
 }
@@ -25,7 +30,9 @@ Result splitString(const std::string& input) {
     return result;
 }
 
-
+/**
+* @brief Сеттер для атрибута address
+*/
 void ServerClientInterface::set_address(string address1){
     const vector<string> list_add = {"127.0.0.1"};
     int fl = 0;
@@ -40,12 +47,16 @@ void ServerClientInterface::set_address(string address1){
     }
 }
 
-
+/**
+* @brief Геттер для атрибута port
+*/
 int ServerClientInterface::get_port(){
     return port;
 }
 
-
+/**
+* @brief Сеттер для атрибута port
+*/
 void ServerClientInterface::set_port(int port1){
     if (port1 < 1023){
         Err.error_recording("критичная", "Fun: set_port. Порт сервера должен быть больше 1024.");
@@ -54,22 +65,30 @@ void ServerClientInterface::set_port(int port1){
     port = port1;
 }
 
-
+/**
+* @brief Сеттер для атрибута vec
+*/
 vector<uint64_t> ServerClientInterface::get_vec(){
     return vec;
 }
 
-
+/**
+* @brief Геттер для атрибута vec
+*/
 void ServerClientInterface::set_vec(vector<uint64_t> v){
     vec = v;
 }
 
-
+/**
+* @brief Геттер для атрибута salt
+*/
 string ServerClientInterface::get_salt(){
     return salt;
 }
 
-
+/**
+* @brief Сеттер для атрибута salt
+*/
 void ServerClientInterface::set_salt(){
     // Символы, которые могут встречаться в строке SALT
     const string saltCharacters = "0123456789ABCDEF";
@@ -91,17 +110,24 @@ void ServerClientInterface::set_salt(){
     salt = Salt;
 }
 
-
+/**
+* @brief Геттер для атрибута DB_clients
+*/
 pair<vector<string>, vector<string>> ServerClientInterface::get_DB_clients(){
     return DB_clients;
 }
 
-
+/**
+* @brief Сеттер для атрибута DB_clients
+*/
 void ServerClientInterface::set_DB_clients(vector<string> login, vector<string> password){
     DB_clients = std::make_pair(login,password);
 }
 
-
+/**
+* @brief Функция вычисления суммы векторов
+* @return Возвращает сумму векторов атрибута vec
+*/
 uint64_t ServerClientInterface::sum_vec(){
     uint64_t sum = 0;
     for (uint64_t value : vec) {

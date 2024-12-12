@@ -1,9 +1,19 @@
+/**
+* @file Errors.cpp
+*/
+
 #include "Errors.h"
 
+/**
+* @brief Геттер для атрибута File_Log
+*/
 string Errors::get_File_Log(){
     return File_Log;
 }
 
+/**
+* @brief Сеттер для атрибута File_Log
+*/
 void Errors::set_File_Log(string file){
 
     ifstream inputFile(file);
@@ -17,7 +27,11 @@ void Errors::set_File_Log(string file){
         File_Log = file;
 }
 
-
+/**
+* @brief Функция сохранения ошибок в журнал
+* @param flag Хранит в себе тип ошибки
+* @param info Хранит в себе подробную информацию об ошибке
+*/
 void Errors::error_recording(string flag, string info){
     // Получаем текущую дату и время
     time_t currentTime = time(nullptr);

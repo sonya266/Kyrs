@@ -1,0 +1,29 @@
+\hypertarget{User_8h_source}{}\doxysection{User.\+h}
+\mbox{\hyperlink{User_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include  <vector>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}./md5/md5.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classUser}{User}}\{}
+\DoxyCodeLine{23     \textcolor{keyword}{private}:}
+\DoxyCodeLine{24         \textcolor{keywordtype}{string} ID;}
+\DoxyCodeLine{25         \textcolor{keywordtype}{string} hash;}
+\DoxyCodeLine{26     \textcolor{keyword}{public}:}
+\DoxyCodeLine{27         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classUser_a1753823c0f9adbb73260860270f51834}{СheckLogin}}(vector<string> Db\_ID);}
+\DoxyCodeLine{28         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classUser_a0653eab1063cc31b0ea57330154bd4af}{CheckPassword}}(vector<string> Db\_password, vector<string> Db\_ID, \textcolor{keywordtype}{string} SALT, \textcolor{keywordtype}{string} SendHash);}
+\DoxyCodeLine{29         }
+\DoxyCodeLine{30         \textcolor{keywordtype}{string} \mbox{\hyperlink{classUser_a250efd79e8d26576e508e1785165926c}{get\_ID}}();}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} \mbox{\hyperlink{classUser_a36330a5c4b0c37859896fd4b08c87c41}{set\_ID}}(\textcolor{keywordtype}{string} ID1);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{keywordtype}{string} \mbox{\hyperlink{classUser_a25785cee66a1ca4f79d964a8333963d2}{get\_hash}}();}
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} \mbox{\hyperlink{classUser_a8efeeb227a1c45ff30dc5ac2287e2c48}{set\_hash}}(\textcolor{keywordtype}{string} hash1);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \};}
+
+\end{DoxyCode}

@@ -19,7 +19,7 @@ struct User_fix {
 	// Ошибка идентификации
 	TEST_FIXTURE(User_fix, SuccessfulIdentificatio){
 		p->set_ID("user");
-		auto resultat = p->СheckLogin({"user1", "llkkey", "user0"});
+		auto resultat = p->СheckLogin({"user", "ivanov", "user0"});
 		// Проверяем результат
 		UNITTEST_CHECK_EQUAL(resultat, 1);
 	}
@@ -28,7 +28,7 @@ struct User_fix {
 	// Ошибка идентификации
 	TEST_FIXTURE(User_fix, IdentificationError){
 		p->set_ID("user");
-		auto resultat = p->СheckLogin({"llkkey", "user0"});
+		auto resultat = p->СheckLogin({"ivanov", "user0"});
 		// Проверяем результат
 		UNITTEST_CHECK_EQUAL(resultat, 0);
 	}
@@ -36,7 +36,7 @@ struct User_fix {
 	TEST_FIXTURE(User_fix, SuccessfulAuthentication){
 		p->set_ID("user");
 		p->set_hash("B77654515B81DCF72FCF0387A1EF6C54");
-		auto resultat = p->CheckPassword({"PassWord", "123456", "qwe123"}, {"user1", "llkkey", "user0"}, "1AF4D801F8BBA41A");
+		auto resultat = p->CheckPassword({"P@ssW0rd", "123456", "qwe123"}, {"user", "ivanov", "user0"}, "1AF4D801F8BBA41A");
 		// Проверяем результат
 		UNITTEST_CHECK_EQUAL(resultat, 1);
 
@@ -46,7 +46,7 @@ struct User_fix {
 	TEST_FIXTURE(User_fix, AuthenticationError){
 		p->set_ID("user");
 		p->set_hash("B77654515B81DCF72FCF0387A1EF6C51");
-		auto resultat = p->CheckPassword({"PassWord", "123456", "qwe123"}, {"user1", "llkkey", "user0"}, "1AF4D801F8BBA41A");
+		auto resultat = p->CheckPassword({"P@ssW0rd", "123456", "qwe123"}, {"user", "ivanov", "user0"}, "1AF4D801F8BBA41A");
 		// Проверяем результат
 		UNITTEST_CHECK_EQUAL(resultat, 0);
 	}
@@ -97,8 +97,8 @@ struct User_fix {
         vector<std::string> login_test = resultat.first;
         vector<std::string> password_test = resultat.second;
 
-		vector<std::string> login = {"user1", "llkkey", "user0"};
-		vector<std::string> password = {"PassWord", "123456", "qwe123"};
+		vector<std::string> login = {"user", "ivanov", "user0"};
+		vector<std::string> password = {"P@ssW0rd", "123456", "qwe123"};
 		cout << endl;
 
         if(login_test != login){

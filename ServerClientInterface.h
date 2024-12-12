@@ -1,3 +1,11 @@
+/** 
+* @file ServerClientInterface.h
+* @author Дьякова С.М.
+* @version 1.0
+* @date 12.12.2023
+* @copyright ИБСТ ПГУ
+* @brief Заголовочный файл для модуля ServerClientInterface
+*/
 #pragma once
 #include <sys/types.h>
 #include <iostream>
@@ -20,7 +28,14 @@
 
 using namespace std;
 
-
+/** 
+* @brief Класс для взаимодействия сервера с клиентами
+* @param address Адрес сервера
+* @param port Порт сервера
+* @param vec Вектор для вычисления расчетов
+* @param DB_clients БД клиентов
+* @param Err объект класса Errors обработки ошибок
+*/
 class ServerClientInterface{
     public:
         int interaction(string database, string logFile);
