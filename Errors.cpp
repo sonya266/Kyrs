@@ -14,17 +14,24 @@ string Errors::get_File_Log(){
 /**
 * @brief Сеттер для атрибута File_Log
 */
-void Errors::set_File_Log(string file){
-
+void Errors::set_File_Log(string file) {
     ifstream inputFile(file);
 
-    if (!inputFile.is_open()){
-        inputFile.close();
-        error_recording("критичная", "Fun: set_File_Log. Файла с журналом ошибок открыть невозможно.");
-        
+    if (!inputFile.is_open()) {
+        error_recording("Некритичная", "Файл с журналом ошибок открыть невозможно. Попытка создать /tmp/vcalc.log.");
+        string tmp_filename = "/tmp/vcalc.log";
+        ofstream tmpFile(tmp_filename); 
+        if (!tmpFile.is_open()) {
+            error_recording("Критичная", "Файл с журналом ошибок /tmp/vcalc.log невозможно открыть.");
+            return; 
+        }
+        std::cout <<"Успешно, файл с ошибками: /tmp/vcalc.log "<< std::endl;
+        tmpFile.close(); 
+    } else {
+        inputFile.close(); 
     }
-    inputFile.close();
-        File_Log = file;
+
+    File_Log = file; 
 }
 
 /**
@@ -59,6 +66,7 @@ void Errors::error_recording(string flag, string info){
 
     string logFileName = get_File_Log();
     std::ofstream logFile(logFileName, std::ios::app);
+    std::cerr << info <<std::endl;
     if (logFile.is_open()) {
         // Записываем дату и время
         logFile << std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << " ";

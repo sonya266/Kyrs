@@ -60,9 +60,7 @@ bool User::CheckPassword(vector<string> Db_password, vector<string> Db_ID, strin
     }
     
     string hashMD5 = SALT + Db_password[t];
-    cout << hashMD5 <<endl;
     string HASHMD5 = MD5_hash(hashMD5);
-    cout << SendHash << "|" << HASHMD5 <<endl;
     if (HASHMD5 == SendHash){
         return 1;
     }

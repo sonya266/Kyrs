@@ -224,9 +224,7 @@ int ServerClientInterface::interaction(string database, string logFile){
         // Проверка наличия логина в базе данных
         User u;
         u.set_ID(result.login);
-        string s1;
-        cout << result.login << endl;
-      
+        string s1;      
         if(!u.СheckLogin(DB_clients.first)){
             
             s1 = "ERR";

@@ -35,8 +35,9 @@ struct User_fix {
 	// Удачная аутентификация
 	TEST_FIXTURE(User_fix, SuccessfulAuthentication){
 		p->set_ID("user");
-		p->set_hash("B77654515B81DCF72FCF0387A1EF6C54");
-		auto resultat = p->CheckPassword({"P@ssW0rd", "123456", "qwe123"}, {"user", "ivanov", "user0"}, "1AF4D801F8BBA41A");
+		string hash = "53EB3422C44AC19900DFF5694768F996";
+		string salt = "C821084969DF6DB9";
+		auto resultat = p->CheckPassword({"P@ssW0rd", "123456", "qwe123"}, {"user", "ivanov", "user0"}, salt, hash);
 		// Проверяем результат
 		UNITTEST_CHECK_EQUAL(resultat, 1);
 
@@ -45,8 +46,9 @@ struct User_fix {
 	// Ошибка аутентификации
 	TEST_FIXTURE(User_fix, AuthenticationError){
 		p->set_ID("user");
-		p->set_hash("B77654515B81DCF72FCF0387A1EF6C51");
-		auto resultat = p->CheckPassword({"P@ssW0rd", "123456", "qwe123"}, {"user", "ivanov", "user0"}, "1AF4D801F8BBA41A");
+		string bad_hash = "53EB3422C44AC19900DFF5694768F998";
+		string salt = "C821084969DF6DB9";
+		auto resultat = p->CheckPassword({"P@ssW0rd", "123456", "qwe123"}, {"user", "ivanov", "user0"}, salt, bad_hash);
 		// Проверяем результат
 		UNITTEST_CHECK_EQUAL(resultat, 0);
 	}
@@ -61,10 +63,7 @@ struct User_fix {
 	}
 };
 
-    // Ошибка открытия журнала
-    TEST_FIXTURE(Errors_fix, LogOpeningError){
-        CHECK_THROW(l->set_File_Log("!/#@/log.conf"), invalid_argument);
-    }
+
 
 	struct DataReader_fix {
 	DataReader * r;
