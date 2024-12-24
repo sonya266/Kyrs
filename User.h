@@ -2,7 +2,7 @@
 * @file User.h
 * @author Дьякова С.М.
 * @version 1.0
-* @date 09.12.2023
+* @date 12.12.2024
 * @copyright ИБСТ ПГУ
 * @brief Заголовочный файл для модуля User
 */

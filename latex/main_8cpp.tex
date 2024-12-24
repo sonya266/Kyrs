@@ -5,8 +5,8 @@
 Функция для предоставления пользователю справки по использованию программы  
 
 
-{\ttfamily \#include $<$getopt.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}Server\+Client\+Interface.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
 Граф включаемых заголовочных файлов для main.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -18,8 +18,8 @@
 \doxysubsection*{Функции}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc}\label{main_8cpp_a97ee70a8770dc30d06c744b24eb2fcfc}} 
-void {\bfseries help} ()
+\mbox{\Hypertarget{main_8cpp_a7f369c67fd7c6feb5bd3149239be0478}\label{main_8cpp_a7f369c67fd7c6feb5bd3149239be0478}} 
+void {\bfseries help} (const po\+::options\+\_\+description \&desc)
 \begin{DoxyCompactList}\small\item\em Функция для получения справки по использованию программы \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
 int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
